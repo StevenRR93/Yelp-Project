@@ -1,0 +1,32 @@
+@model Auction_exam.Models.AuctionViewModel
+
+<h1>Hi @ViewBag.CurUser.FirstName @ViewBag.CurUser.LastName!</h1>
+<a href="/Logout">Logout</a>
+
+<h2>Current Auctions</h2>
+
+<table class="table">
+    <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Seller</th>
+        <th scope="col">Top Bid</th>
+        <th scope="col">Expires on</th>
+        <th scope="col">Action</th>
+    </tr>
+    
+      @foreach(var item in @ViewBag.Auction_list)
+      {
+          <br>
+          <tr>
+          <td><a href="/item/@item.id">@item.Name </a></td>
+          <td>@item.Seller.FirstName </td>
+          <td>@item.LastBid </td>
+          <td>@item.EndDate </td>
+          @if (item.Seller.id == ViewBag.CurUser.id){
+            <td><a href="/Delete/{item.id}">Delete</a></td> <br>
+          }
+          </tr>
+      }    
+</table><br><br>
+<a href="/New"><button type="button"  class="btn btn-primary" value = "/New">New Auction</button></a> <br>
+<p>Your Current Wallet:@ViewBag.CurUser.Balance</p>

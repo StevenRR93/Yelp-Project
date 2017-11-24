@@ -1,0 +1,19 @@
+@model csharptest.Models.Auction
+<a href="/Logout">Logout</a>
+<a href="/Dashboard">Home</a>
+
+<div>
+   @foreach(var i in @ViewBag.item)
+   {
+    <h2>@i.Name</h2>
+    <h3>Created by @i.Seller.FirstName</h3>
+    <p>@i.Description</p><br><br><br>
+    <h4>Current Highest Bid: $@i.LastBid by @i.Buyer.FirstName</h4>
+   }
+</div>
+<br>
+<form asp-controller="Home" asp-action="Bid" method="post">
+    <label>Bid</label>
+    <input type="number" name="Bid" placeholder="Your bid goes here..."/>
+<button type="submit">Bid</button>
+</form>
