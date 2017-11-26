@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-namespace Auction_exam.Models
+namespace Yelp.Models
 {
         // Internal field to hold the received date value.
     

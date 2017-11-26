@@ -15,5 +15,11 @@ namespace Yelp.Controllers
         {
             return View();
         }
+        [HttpGet]
+        [Route("Index")]
+        public IActionResult In()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

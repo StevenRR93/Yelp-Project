@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-namespace Auction_exam.Models
+namespace Yelp.Models
 {
-    public class AuctionViewModel : BaseEntity
+    public class ReviewViewModel : BaseEntity
     {
         [Required]
         [Display(Name = "Item Name")]

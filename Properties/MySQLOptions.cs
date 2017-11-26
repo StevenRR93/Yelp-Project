@@ -1,4 +1,4 @@
-namespace Auction_exam
+namespace Yelp
 {
     public class MySqlOptions
     {

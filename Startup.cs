@@ -28,7 +28,7 @@ namespace Yelp
             services.AddMvc();
             services.AddSession();
             //services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
-            services.AddDbContext<RESTContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
+            services.AddDbContext<YelpContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
